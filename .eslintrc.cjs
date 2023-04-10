@@ -7,6 +7,7 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:astro/recommended",
+    "plugin:vue/vue3-recommended",
     "@unocss",
     "prettier",
   ],
@@ -34,6 +35,13 @@ module.exports = {
           { argsIgnorePattern: "^_", destructuredArrayIgnorePattern: "^_" },
         ],
         "@typescript-eslint/no-non-null-assertion": "off",
+      },
+    },
+    {
+      files: ["*.vue"],
+      parser: "vue-eslint-parser",
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
       },
     },
     {
